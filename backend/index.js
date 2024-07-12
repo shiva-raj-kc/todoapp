@@ -4,6 +4,8 @@ app.use(express.json())
 const jwt = require('jsonwebtoken')
 const {createTodo,updateTodo} = require('./types')
 const {todo} = require("./db")
+const cors = require('cors')
+app.use(cors())
 // app.post('/signup',(req,res)=>{
 
 // })
@@ -45,7 +47,7 @@ app.put('/completed',async(req,res)=>{
         })
         return
     }
-await todo.update({
+await todo.updateOne({
     _id:updatePayload.id
 } ,{
         completed : true
