@@ -2,12 +2,12 @@ export function Todos({todos}){
     return(
         <div>
             {
-                todos.map((todo)=>{
+                todos.map((todos)=>{
                     return(
                         <div>
-                            <h1>{todo.title}</h1>
-                            <h2>{todo.description}</h2>
-                            <button>{todo.completed == true ? "completed" : "mark as completed "}</button>
+                            <h1>{todos.title}</h1>
+                            <h2>{todos.description}</h2>
+                            <button>{todos.completed == true ? "completed" : "mark as completed "}</button>
                         </div>
                     )
                 })

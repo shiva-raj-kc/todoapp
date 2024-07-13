@@ -23,8 +23,7 @@ app.post('/todo',async(req,res)=>{
     }
     await todo.create({
         title : createPayload.title,
-        description : createPayload.description,
-        completed : createPayload.completed
+        description : createPayload.description
     })
     res.json({
         msg : 'todo created'
