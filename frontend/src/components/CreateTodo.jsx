@@ -21,17 +21,21 @@ export function CreateTodo(){
             <button style={{padding : 10,
                             margin : 10 
             }} onClick={
-                fetch("http://localhost:3000/todo",{
-                    method : "POST",
+             useEffect(()=>{
+                fetch("http://localhost:3000/todo",
+                {
+                    method : 'POST',
                     body : JSON.stringify({
                         title : title,
                         description : description
                     }),
-                    headers:{"Content-type" : "application/json "}
-                }).then(async (res)=>{
-                    const msg = await res.json()
-                    alert("added")
-                })
+                    headers : {"Content-type" : "application/json"}
+                }
+            ).then(async(res)=>{
+                const josn = await res.json
+                alert("todo added!")
+            })
+            },[])
             }>add todo</button>
         </div>
     )
